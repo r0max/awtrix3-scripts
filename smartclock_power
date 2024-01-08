@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Toggles Matrix on and off to save energy
+#
+# TODO(roland): allow power state to be passed in, overriding toggle
+#
+
+# shellcheck disable=SC1091
+source $(dirname "$0")/config.sh
+source $(dirname "$0")/smartclock.sh
+
+function sc-on() {
+  touch ${TOGGLE}
+  smartclock::power "power=true"
+}
+
+function sc-off() {
+  if [ -f "${TOGGLE}" ]; then
+    rm ${TOGGLE}
+  fi
+  smartclock::power "power=false"
+}
+
+if [ ! -e ${TOGGLE} ]; then
+  sc-on
+else
+  sc-off
+fi

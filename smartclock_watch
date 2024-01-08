@@ -1,0 +1,68 @@
+#!/bin/bash
+#
+# Operates clock over the day, sets different styles, colors and messages
+# depending on the time of the day
+#
+
+# shellcheck disable=SC1091
+source $(dirname "$0")/config.sh
+source $(dirname "$0")/smartclock.sh
+
+# default values
+TFORMAT="\%H:%M:%S"
+
+H=$(date +"%H")
+
+case $H in
+
+  00|01)
+    smartclock::notify "Time to wrap up!"
+    col="#FFFF00"
+    TFORMAT="\%H:%M"
+  ;;
+  02)
+    smartclock::notify "G' Night!"
+    col="#FF7F00"
+    TFORMAT="\%H:%M"
+  ;;
+  0[3-5])
+		col="#FF0000"
+		TFORMAT="\%H:%M"
+  ;;
+  06)
+    smartclock::notify "Early Bird!"
+    col="#FF7F00"
+  ;;
+  07)
+    smartclock::notify "Good Morning!"
+    col="#FFFF00"
+  ;;
+  15)
+    smartclock::notify "Coffee Break!"
+  ;;
+  1[7-9])
+    col="#00FF00"
+  ;;
+  2[0-3])
+    col="#00AA00"
+  ;;
+  *)
+    col="#FFFFFF"
+  ;;
+esac
+
+J=$(jo \
+  TMODE=0 \
+  TFORMAT="${TFORMAT}" \
+  TIME_COL="${col}" \
+  DFORMAT="\%y-%m-%d" \
+  WD=false \
+    WDCA="#CCCCCC" \
+    WDCI="#333333" \
+  TEFF=2 \
+  ATRANS=false \
+  ABRI=false \
+  BRI=12 \
+  )
+
+smartclock::settings "$J"

@@ -1,0 +1,13 @@
+# SmartClock example cron config
+
+SHELL = /bin/bash
+PATH = /sbin:/usr/sbin:/bin:/usr/bin
+smartclock_watch = /path/to/smartclock_watch
+smartclock_power = /path/to/smartclock_power
+
+# m  h    dom mon dow     user        command
+0    *     *   *   *      roland    $smartclock_watch chdir-self chdir-to ../.. subdirs-setsid >/dev/null
+5    2     *   *   *      roland    $smartclock_power chdir-self chdir-to ../.. subdirs-setsid >/dev/null
+55   5     *   *   *      roland    $smartclock_power chdir-self chdir-to ../.. subdirs-setsid >/dev/null
+
+# Copy CRON.example to /etc/cron.d/smartclock and chown to root:root
