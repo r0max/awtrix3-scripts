@@ -1,6 +1,8 @@
 # Overview
 Bash scripts to automate configuration and operation of the Ulanzi Smart Pixel clock with the alternative AWTRIX Light (AWL) firmware.
 
+![clock](https://github.com/r0max/awl-scripts/assets/555835/e1ced61a-edfc-4774-802b-8f690bc4a65b)
+
 ## Getting Started
 These instructions will show how to install, configure, test and automate the operation of your Smart Pixel clock.
 
