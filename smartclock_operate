@@ -1,5 +1,11 @@
 #!/bin/bash
 #
+# Smart Clock: Operate
+# Set various styles and colors of the clock depending on the time of the day
+#
+# For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
+# For License information, see included LICENSE
+#
 # Operates clock over the day, sets different styles, colors and messages
 # depending on the time of the day
 #
@@ -11,7 +17,11 @@ source $(dirname "$0")/smartclock.sh
 # default values
 TFORMAT="\%H:%M:%S"
 
+# get current hour of the day in HH format
 H=$(date +"%H")
+
+# override current hour for testing
+#H=15
 
 case $H in
 

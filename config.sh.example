@@ -1,8 +1,10 @@
 #!/bin/bash
 #
-# SmartClock Configuration
+# SmartClock: Configuration
+# Configuration template file
 #
-# Copy this file to config.sh and set your IP there
+# For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
+# For License information, see included LICENSE
 #
 
 # Clock IP

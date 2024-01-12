@@ -1,14 +1,12 @@
 #!/bin/bash
 #
-# SmartClock Common Functions
+# Smart Clock Common Functions
 #
-# For API see see https://blueforcer.github.io/awtrix-light/#/api
-# Needs 'jo' installed for conversion to JSON
+# For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
+# For License information, see included LICENSE
 #
-# Tries to follow https://google.github.io/styleguide/shellguide.html
-#
-# TODO(roland): Check return codes from CURL
-# TODO(roland): Pipe error messages to STDERR
+# TODO(r0max): Check return codes from CURL
+# TODO(r0max): Pipe error messages to STDERR
 #
 
 

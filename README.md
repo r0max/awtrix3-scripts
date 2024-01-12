@@ -16,15 +16,15 @@ These instructions will show how to install, configure, test and automate the op
 1. Clone the repository
 1. Copy `config.sh.example` to `config.sh`
 1. Set IP address or name of the Smart Pixel clock in `config.sh`
-1. Configure colors and messages in `smartclock_watch`
+1. Configure colors and messages in `smartclock_operate`
 
 ## Running
 
-Currently, two scripts are implemented: `smartclock_watch` and `smartclock_power`.
+Currently, two scripts are implemented: `smartclock_operate` and `smartclock_power`.
 
 ### Set clock mode depending on time
 ```
-./smartclock_watch
+./smartclock_operate
 ```
 Depending on current time (hour only), the script sets a different configuration on the Smart Pixel clock. For testing, the hour can be overriden in the file itself.
 
@@ -37,7 +37,7 @@ The script will toggle the LED matrix on and off. For this, it uses a toggle fil
 ## Automation
 1. Copy `CRON.example` to `/etc/cron.d/smartclock` and chown to `root:root`
 1. Choose a user to run the script under
-1. Set `smartclock_watch` to run every hour
+1. Set `smartclock_operate` to run every hour
 1. If you want to turn the matrix display e.g. during the night, set `smartclock_power` to run when to switch off and on again
 
 ## License

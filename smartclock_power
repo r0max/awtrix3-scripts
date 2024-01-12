@@ -1,8 +1,12 @@
 #!/bin/bash
 #
-# Toggles Matrix on and off to save energy
+# Smart Clock: Power on/off
+# Toggles LED matrix on and off to save energy
 #
-# TODO(roland): allow power state to be passed in, overriding toggle
+# For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
+# For License information, see included LICENSE
+#
+# TODO(r0max): allow power state to be passed in, overriding toggle
 #
 
 # shellcheck disable=SC1091
