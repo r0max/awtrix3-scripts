@@ -19,6 +19,9 @@ These instructions will show how to install, configure, test and automate the op
 1. Configure colors and messages in `smartclock_watch`
 
 ## Running
+
+Currently, two scripts are implemented: `smartclock_watch` and `smartclock_power`.
+
 ### Set clock mode depending on time
 ```
 ./smartclock_watch
