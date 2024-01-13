@@ -26,7 +26,7 @@ Currently, three scripts are implemented: `smartclock_notify`, `smartclock_opera
 ```
 ./smartclock_notify "message"
 ```
-Displays a message on ths Smart Picel clock. Messages longer then the display will be scrolled. The message will disapper after a couple seconds.
+Displays a message on the Smart Pixel clock. Messages longer then the display will be scrolled. The message will disapper after a couple seconds.
 
 ### Set clock mode depending on time
 ```
