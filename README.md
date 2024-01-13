@@ -20,7 +20,13 @@ These instructions will show how to install, configure, test and automate the op
 
 ## Running
 
-Currently, two scripts are implemented: `smartclock_operate` and `smartclock_power`.
+Currently, three scripts are implemented: `smartclock_notify`, `smartclock_operate`, `smartclock_power`.
+
+### Display a custom message
+```
+./smartclock_notify "message"
+```
+Displays a message on ths Smart Picel clock. Messages longer then the display will be scrolled. The message will disapper after a couple seconds.
 
 ### Set clock mode depending on time
 ```

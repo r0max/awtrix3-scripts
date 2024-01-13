@@ -6,26 +6,28 @@
 # For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
 # For License information, see included LICENSE
 #
-# TODO(r0max): allow power state to be passed in, overriding toggle
+# TODO(r0max): allow power state to be passed in, maybe getting rid of toggle
 #
 
-# shellcheck disable=SC1091
-source $(dirname "$0")/config.sh
-source $(dirname "$0")/smartclock.sh
+SCRIPT_PATH="$(dirname "$0")"
+# shellcheck source=/dev/null
+source "$SCRIPT_PATH/config.sh"
+# shellcheck source=/dev/null
+source "$SCRIPT_PATH/smartclock.sh"
 
 function sc-on() {
-  touch ${TOGGLE}
+  touch "${TOGGLE}"
   smartclock::power "power=true"
 }
 
 function sc-off() {
   if [ -f "${TOGGLE}" ]; then
-    rm ${TOGGLE}
+    rm "${TOGGLE}"
   fi
   smartclock::power "power=false"
 }
 
-if [ ! -e ${TOGGLE} ]; then
+if [ ! -e "${TOGGLE}" ]; then
   sc-on
 else
   sc-off

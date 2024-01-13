@@ -9,7 +9,6 @@
 # TODO(r0max): Pipe error messages to STDERR
 #
 
-
 # Power matrix on|off (true|false)
 # Globals:
 #   CLOCK_IP
@@ -17,8 +16,8 @@
 #   true | false
 function smartclock::power() {
   local J
-  J=$( jo ${1} )
-  curl -d "$J" -H "Content-Type: application/json" -X POST http://${CLOCK_IP}/api/power
+  J=$( jo "${1}" )
+  curl --silent --output /dev/null --show-error --fail -d "$J" -H "Content-Type: application/json" -X POST http://"${CLOCK_IP}"/api/power
 }
 
 # Set settings
@@ -27,7 +26,7 @@ function smartclock::power() {
 # Arguments:
 #   JSON settings object
 function smartclock::settings() {
-  curl -d "${1}" -H "Content-Type: application/json" -X POST http://${CLOCK_IP}/api/settings
+  curl --silent --output /dev/null --show-error --fail -d "${1}" -H "Content-Type: application/json" -X POST http://"${CLOCK_IP}"/api/settings
 }
 
 # Show notification
@@ -36,16 +35,6 @@ function smartclock::settings() {
 # Arguments:
 #   Text to show
 function smartclock::notify() {
-
-# Alternative using jq:
-# J=$(jq -n \
-#  --arg text "$1" \
-#  --arg textCase 2 \
-#  --arg center true \
-#  --arg color "FF00000" \
-#  --arg background "#AAAAFF" \
-#  '$ARGS.named')
-
   local J
   J=$(
     jo \
@@ -55,5 +44,5 @@ function smartclock::notify() {
       color="#FF0000" \
       background="#AAAAFF"
   )
-  curl -d "${J}" -H "Content-Type: application/json" -X POST http://${CLOCK_IP}/api/notify
+  curl --silent --output /dev/null --show-error --fail -d "${J}" -H "Content-Type: application/json" -X POST http://"${CLOCK_IP}"/api/notify
 }

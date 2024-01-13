@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Smart Clock: Notify
+# Display a notification on the clock
+#
+# For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
+# For License information, see included LICENSE
+#
+
+SCRIPT_PATH="$(dirname "$0")"
+# shellcheck source=/dev/null
+source "$SCRIPT_PATH/config.sh"
+# shellcheck source=/dev/null
+source "$SCRIPT_PATH/smartclock.sh"
+
+if [[ $# -eq 0 ]] ; then
+  echo "No message given. Usage: $0 \"<message>\""
+  exit 1
+fi
+
+smartclock::notify "$1"
+
