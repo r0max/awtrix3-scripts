@@ -10,6 +10,3 @@
 # Clock IP
 # shellcheck disable=SC2034
 readonly CLOCK_IP=
-
-# file to keep track of power state
-TOGGLE=/tmp/.toggle-smartclock-power

@@ -1,13 +1,12 @@
 #!/bin/bash
 #
 # Smart Clock: Power on/off
-# Toggles LED matrix on and off to save energy
+# Powers LED matrix on and off to save energy
 #
 # For coding style, tries to follow https://google.github.io/styleguide/shellguide.html
 # For License information, see included LICENSE
 #
-# TODO(r0max): allow power state to be passed in, maybe getting rid of toggle
-#
+
 
 SCRIPT_PATH="$(dirname "$0")"
 # shellcheck source=/dev/null
@@ -15,20 +14,19 @@ source "$SCRIPT_PATH/config.sh"
 # shellcheck source=/dev/null
 source "$SCRIPT_PATH/smartclock.sh"
 
-function sc-on() {
-  touch "${TOGGLE}"
+case "$1" in
+on)
   smartclock::power "power=true"
-}
+  exit
+  ;;
 
-function sc-off() {
-  if [ -f "${TOGGLE}" ]; then
-    rm "${TOGGLE}"
-  fi
+off)
   smartclock::power "power=false"
-}
+  exit
+  ;;
 
-if [ ! -e "${TOGGLE}" ]; then
-  sc-on
-else
-  sc-off
-fi
+*)
+  echo "Usage: ./$0 on|off"
+  ;;
+
+esac
