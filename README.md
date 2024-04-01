@@ -1,5 +1,5 @@
 # Overview
-Simple Bash scripts to automate configuration and operation of the Ulanzi TC001 Smart Pixel clock with the alternative AWTRIX Light (AWL) firmware.
+Simple Bash scripts to automate configuration and operation of the Ulanzi TC001 Smart Pixel clock with the alternative AWTRIX 3 firmware.
 
 ![clock](https://github.com/r0max/awl-scripts/assets/555835/e1ced61a-edfc-4774-802b-8f690bc4a65b)
 
@@ -51,5 +51,5 @@ See [LICENSE](LICENSE) for licensing information.
 
 ## Links
 - https://www.ulanzi.com/products/ulanzi-pixel-smart-clock-2882 (Hardware)
-- https://github.com/Blueforcer/awtrix-light (AWTRIX Light firmware)
-- https://blueforcer.github.io/awtrix-light/#/api (API)
+- https://github.com/Blueforcer/awtrix3 (AWTRIX 3 firmware)
+- https://blueforcer.github.io/awtrix3/#/api (API)
