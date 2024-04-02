@@ -44,7 +44,7 @@ The script will toggle the LED matrix on and off. For this, it uses a toggle fil
 1. Copy `CRON.example` to `/etc/cron.d/smartclock` and chown to `root:root`
 1. Choose a user to run the script under
 1. Set `smartclock_operate` to run every hour
-1. If you want to turn the matrix display e.g. during the night, set `smartclock_power` to run when to switch off and on again
+1. If you want to turn the matrix display off e.g. during the night, set `smartclock_power` to run when to switch off and on again
 
 ## License
 See [LICENSE](LICENSE) for licensing information.
